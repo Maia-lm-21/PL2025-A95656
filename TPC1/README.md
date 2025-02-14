@@ -13,5 +13,5 @@
 - O objetivo era não usar expressões regulares, o que complica e aumenta o tamanho da solução.
 
 ## Lista de Resultados
-- [Resultado1](./resultado1.txt) - Teste simples, sem "on" e "off", usando o ficheiro [Teste1](./teste1.txt)
-- [Resultado2](./resultado2.txt) - Teste complexo, usando o ficheiro [Teste2](teste2.txt)
+- [Resultado1](resultado1.txt) - Teste simples, sem "on" e "off", usando o ficheiro [Teste1](teste1.txt)
+- [Resultado2](resultado2.txt) - Teste complexo, usando o ficheiro [Teste2](teste2.txt)
