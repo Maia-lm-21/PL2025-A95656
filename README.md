@@ -9,4 +9,5 @@
 
 ## Descrição
 - Repositório onde irão constar as resoluções dos TPC's da UC de Processamento de Linguagens, da Licenciatura em Engenharia Informática da Universidade do Minho.
+
 ![](UM.png)
