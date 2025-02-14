@@ -13,5 +13,5 @@
 - O objetivo era não usar expressões regulares, o que complica e aumenta o tamanho da solução.
 
 ## Lista de Resultados
-- [Teste1](./resultado1.txt) - Teste usando o ficheiro teste1.txt
-- [Teste2](./resultado2.txt) - Teste usando o ficheiro teste2.txt
+- [Teste1](./resultado1.txt) - Teste usando o ficheiro [Teste1](./teste1.txt)
+- [Teste2](./resultado2.txt) - Teste usando o ficheiro [Teste2](teste2.txt)
