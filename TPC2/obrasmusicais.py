@@ -12,25 +12,19 @@ class Obra:
     duracao: str
     ident: str
 
-#linha = r'^[^\;]*?;[^\;]*?;[^\;]*?;[^\;]*?;[^\;]*?;[^\;]*;[^\;]*?\n'
 linha = r'[\w\&\,\s\"\.\:\(\)\[\]\'À-ÖØ-öø-ÿ–—\-\/«!?»↑♭♯’\u0400-\u04FF]*;[\w\&\,\s\"\.\:\(\)\[\]\'À-ÖØ-öø-ÿ–—\-\/«!?»↑♭♯’\u0400-\u04FF]*;[\w\&\,\s\"\.\:\(\)\[\]\'À-ÖØ-öø-ÿ–—\-\/«!?»↑♭♯’\u0400-\u04FF]*;[\w\&\,\s\"\.\:\(\)\[\]\'À-ÖØ-öø-ÿ–—\-\/«!?»↑♭♯’\u0400-\u04FF]*;[\w\&\,\s\"\.\:\(\)\[\]\'À-ÖØ-öø-ÿ–—\-\/«!?»↑♭♯’\u0400-\u04FF]*;[\w\&\,\s\"\.\:\(\)\[\]\'À-ÖØ-öø-ÿ–—\-\/«!?»↑♭♯’\u0400-\u04FF]*;[\w\&\,\s\"\.\:\(\)\[\]\'À-ÖØ-öø-ÿ–—\-\/«!?»↑♭♯’\u0400-\u04FF]*\n'
-#[^\;]+;[^\;]+|\n;[^\;]*;[^\;]*;[^\;]*;[^\;]*;[^\;]*\n
+
 ficheiro = open("obras.csv", mode = 'r', encoding='utf8')
 
 texto = ficheiro.read()
 
 linhas = re.findall(linha,texto)
 
-#print(linhas)
 
 lista = []
-i=1
 for linha in linhas[1:]:
-    print (f"Esta é a linha {i}: {linha}\n")
-    i+=1
     parte = linha.strip().split(';')
     if len(parte) == 7:
-        #print(f"{parte}\n")
         obra = Obra(
             nome = parte[0],
             desc = parte[1],
@@ -41,16 +35,8 @@ for linha in linhas[1:]:
             ident = parte[6]
         )
         lista.append(obra)
-        print(f"Nome: {obra.nome}\n")
-        #print(f"Descrição: {obra.desc}\n")
-        print(f"Ano de Criação: {obra.anoCriacao}\n")
-        print(f"Período: {obra.periodo}\n")
-        print(f"Compositor: {obra.compositor}\n")
-        print(f"Duração: {obra.duracao}\n")
-        print(f"Identificador: {obra.ident}\n")
-        print("-" * 40 + "\n")
+        
 
-print (len(lista))
 
 # 1. Lista ordenada alfabeticamente dos compositores
 compositores = sorted(set(obra.compositor for obra in lista))
@@ -74,11 +60,25 @@ print("escolha uma opção:\n1. Lista ordenada alfabeticamente dos compositores\
 while True:
     linha = input("Opção: ").strip()  # Ler entrada e remover espaços extras
     if linha == '1':
-        print("Lista de compositores ordenada:", compositores)
+        with open("resultado1.txt", mode = 'w', encoding='utf8') as ficheiro:
+            for c in compositores:
+                ficheiro.write(f"{c}\n")
+        print("Foi gerado o ficheiro \"resultado1.txt\" com o conteúdo desejado\n")
+
     elif linha == '2':
-        print("Distribuição das obras por período:", dict(periodo_contagem))
+        with open("resultado2.txt", mode = 'w', encoding='utf8') as ficheiro:
+            ficheiro.write(f"{dict(periodo_contagem)}")
+        print("Foi gerado o ficheiro \"resultado2.txt\" com o conteúdo desejado\n")
     elif linha == '3':
-        print("Dicionário de períodos com listas alfabéticas das obras:", dict(periodo_obras))
+        with open("resultado3.txt", mode = 'w', encoding='utf8') as ficheiro:
+            for periodo, obras in periodo_obras.items():
+                ficheiro.write(f"Período: {periodo}\n")
+                ficheiro.write("Lista de obras:")
+                for obra in obras:
+                    ficheiro.write(f" - {obra}\n")
+                ficheiro.write("\n")
+        print("Foi gerado o ficheiro \"resultado3.txt\" com o conteúdo desejado\n")
+
     elif linha == '0':
         print("A sair...")
         break
