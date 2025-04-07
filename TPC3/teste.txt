@@ -1,0 +1,11 @@
+# Título de exemplo
+
+## Subtítulo de exemplo
+
+Aqui está um texto com **negrito** e *itálico* e também um [link](https://exemplo.com).
+
+1. Primeiro item
+2. Segundo item
+3. Terceiro item
+
+Aqui tem uma imagem: ![Alt da imagem](https://exemplo.com/imagem.png)
