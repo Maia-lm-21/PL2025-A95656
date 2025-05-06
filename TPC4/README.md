@@ -1,4 +1,4 @@
-# TPC2 - Analisador Léxico
+# TPC4 - Analisador Léxico
 
 **Data:** 06/05/2025
 
@@ -12,7 +12,7 @@
 ## Resumo do trabalho
 - Este trabalho consistiu na criação de um analisador léxico para uma linguagem de query com a qual se podem escrever frases do género:
 ```
-codeselect ?nome ?desc where {
+select ?nome ?desc where {
 ?s a dbo:MusicalArtist.
 ?s foaf:name "Chuck Berry"@en .
 ?w dbo:artist ?s.
@@ -22,4 +22,4 @@ codeselect ?nome ?desc where {
 ```
 
 ## Lista de Resultados
-- [Resultado1](resultado1.txt) - 
+- [Resultado1](resultado1.txt) - Teste simples, com todas as primitivas presentes no enunciado, usando o ficheiro [Teste1](teste1.txt)
