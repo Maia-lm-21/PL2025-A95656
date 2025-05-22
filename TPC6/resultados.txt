@@ -1,0 +1,9 @@
+Linha:  2+3
+Resultado:5 
+
+Linha:  67-(2+3*4)
+Resultado:53 
+
+Linha:  (9-2)*(13-4)
+Resultado:63 
+
